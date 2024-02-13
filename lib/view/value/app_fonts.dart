@@ -39,4 +39,14 @@ class AppFonts {
     fontWeight: FontWeight.w400,
     color: Colors.black,
   );
+  static TextStyle h2Semibold18 = GoogleFonts.poppins(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: const Color(0xFF303030),
+  );
+  static TextStyle bodyNormalRegular = GoogleFonts.poppins(
+    fontSize: 15,
+    fontWeight: FontWeight.w400,
+    color: const Color(0xFF303030),
+  );
 }

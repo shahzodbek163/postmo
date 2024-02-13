@@ -29,12 +29,21 @@ class _ApiService implements ApiService {
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<LoginResponse>(Options(
       method: 'POST',
+  Future<ImageResponse> getAllImage() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<ImageResponse>(Options(
+      method: 'GET',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
               '/auth/user/login',
+              '/post/image/get/all',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -71,6 +80,7 @@ class _ApiService implements ApiService {
               baseUrl,
             ))));
     final value = RegisterResponse.fromJson(_result.data!);
+    final value = ImageResponse.fromJson(_result.data!);
     return value;
   }
 
