@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:postmo/controller/service/api/app_ip.dart';
 import 'package:postmo/controller/service/dialogs/custom_snack_bar.dart';
+import 'package:postmo/controller/service/dialogs/show_top_snack_bar.dart';
 
 class AuthDio {
   late final Dio _dio;
@@ -51,8 +52,14 @@ class AuthDio {
           if (e.type == DioExceptionType.connectionError ||
               e.type == DioExceptionType.connectionTimeout) {
             _snackBar.showError("Internet bilan aloqa uzildi");
+          } else if (e.response != null) {
+            if (e.response!.statusCode == 400) {
+              showErrorSnackBar(e.response!.data["message"]);
+            } else {
+              showErrorSnackBar("Nimadir xato bo'ldi");
+            }
           } else {
-            _snackBar.showError("Nimadir xato");
+            showErrorSnackBar("Nimadir xato bo'ldi");
           }
 
           handler.next(e);

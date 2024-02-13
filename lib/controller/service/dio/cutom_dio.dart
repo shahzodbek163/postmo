@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:postmo/controller/service/dialogs/custom_snack_bar.dart';
 import 'package:postmo/controller/service/dio/secure_storage.dart';
 import 'package:postmo/controller/service/navigation/navigation_service.dart';
-import 'package:postmo/view/test_screen.dart';
+import 'package:postmo/view/screen/start/screen/start_screen.dart';
 
 class CustomDio {
   static Dio _dio = Dio();
@@ -51,7 +51,7 @@ class CustomDio {
     _dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) {
-          options.headers["Authorization"] = "Bearer $token";
+          options.headers["token"] = token;
           return handler.next(options);
         },
         onResponse: (response, handler) {
@@ -59,7 +59,7 @@ class CustomDio {
             case 401:
               {
                 NavigationService.navigatorKey.currentState!.context
-                    .pushReplacement(TestScreen.routeName);
+                    .pushReplacement(StartScreen.routeName);
               }
               break;
           }

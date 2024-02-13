@@ -28,15 +28,17 @@ showInoSnackBar(String message) {
 
 showSuccessSnackBar(String message) {
   Flushbar(
-          duration: const Duration(seconds: 3),
-          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
-          borderRadius: BorderRadius.circular(12),
-          flushbarPosition: FlushbarPosition.TOP,
-          leftBarIndicatorColor: Colors.transparent,
-          message: message,
-          backgroundColor: Colors.green,
-          icon: const Icon(Icons.check))
-      .show(NavigationService.navigatorKey.currentState!.context);
+      duration: const Duration(seconds: 3),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+      borderRadius: BorderRadius.circular(12),
+      flushbarPosition: FlushbarPosition.TOP,
+      leftBarIndicatorColor: Colors.transparent,
+      message: message,
+      backgroundColor: Colors.green,
+      icon: const Icon(
+        Icons.check,
+        color: Colors.white,
+      )).show(NavigationService.navigatorKey.currentState!.context);
 }
 
 showErrorSnackBar(String message) {

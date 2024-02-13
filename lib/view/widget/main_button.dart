@@ -5,10 +5,12 @@ import 'package:postmo/view/value/app_fonts.dart';
 class MainButton extends StatelessWidget {
   final String text;
   final VoidCallback? onTap;
+  final bool loading;
   const MainButton({
     super.key,
     this.text = "Text",
     this.onTap,
+    this.loading = false,
   });
 
   @override
@@ -26,9 +28,11 @@ class MainButton extends StatelessWidget {
           ),
         ),
         onPressed: onTap,
-        child: Text(
-          text,
-          style: AppFonts.f16w500.copyWith(color: Colors.white),
-        ));
+        child: loading
+            ? const CircularProgressIndicator()
+            : Text(
+                text,
+                style: AppFonts.f16w500.copyWith(color: Colors.white),
+              ));
   }
 }

@@ -1,21 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 import 'package:postmo/view/value/app_color.dart';
 import 'package:postmo/view/value/app_fonts.dart';
 
 class MainTextfield extends StatelessWidget {
   final String hintText;
   final Widget? suffix;
-  final bool redBorder;
   final bool eye;
   final TextInputType keybardType;
+  final TextEditingController? controller;
+  final bool isValid;
+  final bool isEmpty;
   const MainTextfield({
     super.key,
     this.hintText = "Hint text",
     this.suffix,
-    this.redBorder = false,
     this.eye = false,
     this.keybardType = TextInputType.text,
+    this.controller,
+    this.isValid = true,
+    this.isEmpty = false,
   });
 
   @override
@@ -28,13 +33,14 @@ class MainTextfield extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
           width: 1.w,
-          color: redBorder ? Colors.red : Colors.transparent,
+          color: !isValid || isEmpty ? Colors.red : Colors.transparent,
         ),
         color: AppColor.back,
       ),
       child: TextField(
         obscureText: eye,
         keyboardType: keybardType,
+        controller: controller,
         decoration: InputDecoration(
           suffixIcon: Padding(
             padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 4),

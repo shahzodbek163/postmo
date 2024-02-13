@@ -29,4 +29,14 @@ class AppFonts {
     fontWeight: FontWeight.w700,
     color: Colors.black,
   );
+  static TextStyle f14w500 = GoogleFonts.ubuntu(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: Colors.black,
+  );
+  static TextStyle f14w400 = GoogleFonts.ubuntu(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: Colors.black,
+  );
 }
