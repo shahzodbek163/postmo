@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:go_router/go_router.dart';
+import 'package:postmo/controller/service/api/app_token.dart';
 import 'package:postmo/controller/service/dialogs/custom_snack_bar.dart';
 import 'package:postmo/controller/service/dio/secure_storage.dart';
 import 'package:postmo/controller/service/navigation/navigation_service.dart';
@@ -51,7 +52,8 @@ class CustomDio {
     _dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) {
-          options.headers["Authorization"] = "Bearer $token";
+          options.headers["Authorization"] = "Bearer ${AppToken.token}";
+          options.headers["token"] = AppToken.token;
           return handler.next(options);
         },
         onResponse: (response, handler) {
