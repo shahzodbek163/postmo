@@ -13,7 +13,7 @@ class _ApiService implements ApiService {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'https://1681-188-113-196-25.ngrok-free.app/api';
+    baseUrl ??= 'https://7365-37-110-214-174.ngrok-free.app/api';
   }
 
   final Dio _dio;
@@ -29,21 +29,12 @@ class _ApiService implements ApiService {
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<LoginResponse>(Options(
       method: 'POST',
-  Future<ImageResponse> getAllImage() async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<ImageResponse>(Options(
-      method: 'GET',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
               '/auth/user/login',
-              '/post/image/get/all',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -80,6 +71,32 @@ class _ApiService implements ApiService {
               baseUrl,
             ))));
     final value = RegisterResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<ImageResponse> getAllImage() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<ImageResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/post/image/get/all',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
     final value = ImageResponse.fromJson(_result.data!);
     return value;
   }

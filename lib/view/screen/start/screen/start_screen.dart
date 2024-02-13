@@ -48,7 +48,9 @@ class StartScreen extends StatelessWidget {
             const Gap(16),
             MainButton(
               text: "Boshlash",
-              onTap: () => context.push(LoginScreen.routeName),
+              onTap: () {
+                context.push(LoginScreen.routeName);
+              },
             ),
           ],
         ),
