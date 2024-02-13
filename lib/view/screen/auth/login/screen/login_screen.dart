@@ -7,6 +7,7 @@ import 'package:postmo/controller/bloc/auth/login/cubit/login_cubit.dart';
 import 'package:postmo/controller/service/dialogs/show_top_snack_bar.dart';
 import 'package:postmo/model/auth/login/request/login_request.dart';
 import 'package:postmo/view/screen/auth/register/screen/register_screen.dart';
+import 'package:postmo/view/screen/home/screen/home_screen.dart';
 import 'package:postmo/view/test_screen.dart';
 import 'package:postmo/view/value/app_color.dart';
 import 'package:postmo/view/value/app_fonts.dart';
@@ -136,7 +137,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         );
                         loginCubit.login(loginRequest).then((value) {
                           if (value) {
-                            context.pushReplacement(TestScreen.routeName);
+                            context.pushReplacement(HomeScreen.routeName);
                           }
                         });
                       }

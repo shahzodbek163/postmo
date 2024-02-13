@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:postmo/controller/service/api/app_ip.dart';
 import 'package:postmo/models/image/image_response.dart';
 import 'package:postmo/view/value/app_fonts.dart';
 
-class ImageCard extends StatefulWidget {
-  final ImageDatum data;
+class ImageCard extends StatelessWidget {
+  final String imageUrl;
 
-  const ImageCard({super.key, required this.data});
+  const ImageCard({super.key, required this.imageUrl});
 
-  @override
-  State<ImageCard> createState() => _ImageCardState();
-}
-
-class _ImageCardState extends State<ImageCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,8 +26,8 @@ class _ImageCardState extends State<ImageCard> {
         children: [
           ClipRRect(
             borderRadius: const BorderRadius.vertical(top: Radius.circular(10)),
-            child: Image.asset(
-              "assets/images/camera.jpg",
+            child: Image.network(
+              "${AppIp.ip}/image/$imageUrl",
               fit: BoxFit.cover,
               height: 280,
             ),
