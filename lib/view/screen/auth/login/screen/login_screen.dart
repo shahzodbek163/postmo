@@ -138,7 +138,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         );
                         loginCubit.login(loginRequest).then((value) {
                           if (value) {
-                            context.pushReplacement(HomeScreen.routeName);
+                            Navigator.of(context).pushAndRemoveUntil(
+                                MaterialPageRoute(
+                                  builder: (context) => const HomeScreen(),
+                                ),
+                                (route) => true);
                           }
                         });
                       }
