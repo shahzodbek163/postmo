@@ -43,37 +43,16 @@ Map<String, dynamic> _$$ImageDatumImplToJson(_$ImageDatumImpl instance) =>
     };
 
 _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
-      id: $enumDecode(_$IdEnumMap, json['_id']),
-      name: $enumDecode(_$NameEnumMap, json['name']),
-      username: $enumDecode(_$UsernameEnumMap, json['username']),
+      id: json['_id'] as String,
+      name: json['name'] as String,
+      username: json['username'] as String,
       v: json['__v'] as int,
     );
 
 Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
     <String, dynamic>{
-      '_id': _$IdEnumMap[instance.id]!,
-      'name': _$NameEnumMap[instance.name]!,
-      'username': _$UsernameEnumMap[instance.username]!,
+      '_id': instance.id,
+      'name': instance.name,
+      'username': instance.username,
       '__v': instance.v,
     };
-
-const _$IdEnumMap = {
-  Id.THE_65_C8_AE167_C09_A351_D1_E5_C257: '65c8ae167c09a351d1e5c257',
-  Id.THE_65_C8_AEB97_C09_A351_D1_E5_C26_B: '65c8aeb97c09a351d1e5c26b',
-  Id.THE_65_C9_F5_D49_D2_B10_BB09_D06_D3_E: '65c9f5d49d2b10bb09d06d3e',
-  Id.THE_65_C9_FCE19_D2_B10_BB09_D06_D9_D: '65c9fce19d2b10bb09d06d9d',
-};
-
-const _$NameEnumMap = {
-  Name.AHMADILLO: 'Ahmadillo',
-  Name.MUHAMMADALI: 'Muhammadali',
-  Name.MUHAMMADSIRIN: 'Muhammadsirin',
-  Name.SHAHZOD: 'Shahzod',
-};
-
-const _$UsernameEnumMap = {
-  Username.AHMADJON: 'ahmadjon',
-  Username.MODEVCO: 'modevco',
-  Username.SHOHAJON: 'shohajon',
-  Username.THE_1234_MUHAMMAD: '1234muhammad',
-};

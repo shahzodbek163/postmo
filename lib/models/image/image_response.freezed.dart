@@ -490,11 +490,11 @@ User _$UserFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$User {
   @JsonKey(name: "_id")
-  Id get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   @JsonKey(name: "name")
-  Name get name => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   @JsonKey(name: "username")
-  Username get username => throw _privateConstructorUsedError;
+  String get username => throw _privateConstructorUsedError;
   @JsonKey(name: "__v")
   int get v => throw _privateConstructorUsedError;
 
@@ -509,9 +509,9 @@ abstract class $UserCopyWith<$Res> {
       _$UserCopyWithImpl<$Res, User>;
   @useResult
   $Res call(
-      {@JsonKey(name: "_id") Id id,
-      @JsonKey(name: "name") Name name,
-      @JsonKey(name: "username") Username username,
+      {@JsonKey(name: "_id") String id,
+      @JsonKey(name: "name") String name,
+      @JsonKey(name: "username") String username,
       @JsonKey(name: "__v") int v});
 }
 
@@ -537,15 +537,15 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as Id,
+              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as Name,
+              as String,
       username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
-              as Username,
+              as String,
       v: null == v
           ? _value.v
           : v // ignore: cast_nullable_to_non_nullable
@@ -562,9 +562,9 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "_id") Id id,
-      @JsonKey(name: "name") Name name,
-      @JsonKey(name: "username") Username username,
+      {@JsonKey(name: "_id") String id,
+      @JsonKey(name: "name") String name,
+      @JsonKey(name: "username") String username,
       @JsonKey(name: "__v") int v});
 }
 
@@ -587,15 +587,15 @@ class __$$UserImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as Id,
+              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as Name,
+              as String,
       username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
-              as Username,
+              as String,
       v: null == v
           ? _value.v
           : v // ignore: cast_nullable_to_non_nullable
@@ -618,13 +618,13 @@ class _$UserImpl implements _User {
 
   @override
   @JsonKey(name: "_id")
-  final Id id;
+  final String id;
   @override
   @JsonKey(name: "name")
-  final Name name;
+  final String name;
   @override
   @JsonKey(name: "username")
-  final Username username;
+  final String username;
   @override
   @JsonKey(name: "__v")
   final int v;
@@ -666,22 +666,22 @@ class _$UserImpl implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {@JsonKey(name: "_id") required final Id id,
-      @JsonKey(name: "name") required final Name name,
-      @JsonKey(name: "username") required final Username username,
+      {@JsonKey(name: "_id") required final String id,
+      @JsonKey(name: "name") required final String name,
+      @JsonKey(name: "username") required final String username,
       @JsonKey(name: "__v") required final int v}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
   @override
   @JsonKey(name: "_id")
-  Id get id;
+  String get id;
   @override
   @JsonKey(name: "name")
-  Name get name;
+  String get name;
   @override
   @JsonKey(name: "username")
-  Username get username;
+  String get username;
   @override
   @JsonKey(name: "__v")
   int get v;

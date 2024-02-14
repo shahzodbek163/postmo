@@ -80,8 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   itemCount: response.data.length,
                                   shrinkWrap: true,
                                   itemBuilder: (context, index) => ImageCard(
-                                    imageUrl:
-                                        "${AppIp.ip}/image/${response.data[index].image}",
+                                    data: response.data[index],
                                   ),
                                 );
                         },

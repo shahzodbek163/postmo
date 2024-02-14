@@ -4,9 +4,9 @@ import 'package:postmo/models/image/image_response.dart';
 import 'package:postmo/view/value/app_fonts.dart';
 
 class ImageCard extends StatelessWidget {
-  final String imageUrl;
+  final ImageDatum data;
 
-  const ImageCard({super.key, required this.imageUrl});
+  const ImageCard({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class ImageCard extends StatelessWidget {
           ClipRRect(
             borderRadius: const BorderRadius.vertical(top: Radius.circular(10)),
             child: Image.network(
-              "${AppIp.ip}/image/$imageUrl",
+              "${AppIp.ip}/images/${data.image}",
               fit: BoxFit.cover,
               height: 280,
             ),

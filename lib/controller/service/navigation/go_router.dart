@@ -10,7 +10,7 @@ import 'package:postmo/view/test_screen.dart';
 class AppGoRouter {
   final router = GoRouter(
     navigatorKey: NavigationService.navigatorKey,
-    initialLocation: HomeScreen.routeName,
+    initialLocation: LoginScreen.routeName,
     routes: [
       GoRoute(
         path: TestScreen.routeName,
