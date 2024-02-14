@@ -1,5 +1,5 @@
 class AppIp {
   AppIp._();
 
-  static const String ip = "http://192.168.114.86:9090";
+  static const String ip = "https://7365-37-110-214-174.ngrok-free.app";
 }

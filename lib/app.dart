@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:postmo/controller/bloc/auth/login/cubit/login_cubit.dart';
 import 'package:postmo/controller/bloc/image/image_get_all_cubit.dart';
 import 'package:postmo/controller/service/navigation/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});

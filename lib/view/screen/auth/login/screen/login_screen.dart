@@ -5,6 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:postmo/controller/bloc/auth/login/cubit/login_cubit.dart';
 import 'package:postmo/controller/service/dialogs/show_top_snack_bar.dart';
+import 'package:postmo/controller/service/transition/transitions.dart';
 import 'package:postmo/model/auth/login/request/login_request.dart';
 import 'package:postmo/view/screen/auth/register/screen/register_screen.dart';
 import 'package:postmo/view/screen/home/screen/home_screen.dart';
@@ -137,7 +138,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         );
                         loginCubit.login(loginRequest).then((value) {
                           if (value) {
-                            context.pushReplacement(HomeScreen.routeName);
+                            Navigator.of(context).pushAndRemoveUntil(
+                                MaterialPageRoute(
+                                  builder: (context) => const HomeScreen(),
+                                ),
+                                (route) => true);
                           }
                         });
                       }

@@ -39,6 +39,16 @@ class AppFonts {
     fontWeight: FontWeight.w400,
     color: Colors.black,
   );
+  static TextStyle f18w600 = GoogleFonts.ubuntu(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: Colors.black,
+  );
+  static TextStyle f18w400 = GoogleFonts.ubuntu(
+    fontSize: 18,
+    fontWeight: FontWeight.w400,
+    color: Colors.black,
+  );
   static TextStyle h2Semibold18 = GoogleFonts.poppins(
     fontSize: 18,
     fontWeight: FontWeight.w600,
