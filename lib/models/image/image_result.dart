@@ -1,26 +1,26 @@
 // To parse this JSON data, do
 //
-//     final imageResponse = imageResponseFromJson(jsonString);
+//     final imageResult = imageResultFromJson(jsonString);
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'dart:convert';
 
-part 'image_response.freezed.dart';
-part 'image_response.g.dart';
+part 'image_result.freezed.dart';
+part 'image_result.g.dart';
 
-ImageResponse imageResponseFromJson(String str) =>
-    ImageResponse.fromJson(json.decode(str));
+ImageResult imageResultFromJson(String str) =>
+    ImageResult.fromJson(json.decode(str));
 
-String imageResponseToJson(ImageResponse data) => json.encode(data.toJson());
+String imageResultToJson(ImageResult data) => json.encode(data.toJson());
 
 @freezed
-class ImageResponse with _$ImageResponse {
-  const factory ImageResponse({
+class ImageResult with _$ImageResult {
+  const factory ImageResult({
     @JsonKey(name: "data") required List<ImageDatum> data,
-  }) = _ImageResponse;
+  }) = _ImageResult;
 
-  factory ImageResponse.fromJson(Map<String, dynamic> json) =>
-      _$ImageResponseFromJson(json);
+  factory ImageResult.fromJson(Map<String, dynamic> json) =>
+      _$ImageResultFromJson(json);
 }
 
 @freezed
@@ -30,7 +30,7 @@ class ImageDatum with _$ImageDatum {
     @JsonKey(name: "title") required String title,
     @JsonKey(name: "image") required String image,
     @JsonKey(name: "desc") required String desc,
-    @JsonKey(name: "user") required User user,
+    @JsonKey(name: "user") required User? user,
     @JsonKey(name: "createdAt") required DateTime createdAt,
     @JsonKey(name: "updatedAt") required DateTime updatedAt,
     @JsonKey(name: "__v") required int v,

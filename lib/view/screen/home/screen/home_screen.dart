@@ -1,8 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:postmo/controller/bloc/image/image_get_all_cubit.dart';
-import 'package:postmo/controller/service/api/app_ip.dart';
 import 'package:postmo/view/screen/home/widget/image_card.dart';
 import 'package:postmo/view/value/app_fonts.dart';
 
@@ -74,14 +74,18 @@ class _HomeScreenState extends State<HomeScreen> {
                         orElse: () => const SizedBox(),
                         loading: () => const CircularProgressIndicator(),
                         get: (response) {
+                          log(response.data.length.toString());
                           return response.data.isEmpty
-                              ? const Text("Ma'lumot yo'q")
+                              ? const Text("Rasm yo'q")
                               : ListView.builder(
-                                  itemCount: response.data.length,
                                   shrinkWrap: true,
-                                  itemBuilder: (context, index) => ImageCard(
-                                    data: response.data[index],
-                                  ),
+                                  reverse: true,
+                                  physics: const NeverScrollableScrollPhysics(),
+                                  itemCount: response.data.length,
+                                  itemBuilder: (context, index) {
+                                    return ImageCard(
+                                        data: response.data[index]);
+                                  },
                                 );
                         },
                       );

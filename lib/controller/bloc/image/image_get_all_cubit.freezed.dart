@@ -20,7 +20,7 @@ mixin _$ImageGetAllState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ImageResponse response) get,
+    required TResult Function(ImageResult response) get,
     required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$ImageGetAllState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ImageResponse response)? get,
+    TResult? Function(ImageResult response)? get,
     TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$ImageGetAllState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ImageResponse response)? get,
+    TResult Function(ImageResult response)? get,
     TResult Function()? error,
     required TResult orElse(),
   }) =>
@@ -126,7 +126,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ImageResponse response) get,
+    required TResult Function(ImageResult response) get,
     required TResult Function() error,
   }) {
     return initial();
@@ -137,7 +137,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ImageResponse response)? get,
+    TResult? Function(ImageResult response)? get,
     TResult? Function()? error,
   }) {
     return initial?.call();
@@ -148,7 +148,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ImageResponse response)? get,
+    TResult Function(ImageResult response)? get,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -240,7 +240,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ImageResponse response) get,
+    required TResult Function(ImageResult response) get,
     required TResult Function() error,
   }) {
     return loading();
@@ -251,7 +251,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ImageResponse response)? get,
+    TResult? Function(ImageResult response)? get,
     TResult? Function()? error,
   }) {
     return loading?.call();
@@ -262,7 +262,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ImageResponse response)? get,
+    TResult Function(ImageResult response)? get,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -319,9 +319,9 @@ abstract class _$$GetImplCopyWith<$Res> {
   factory _$$GetImplCopyWith(_$GetImpl value, $Res Function(_$GetImpl) then) =
       __$$GetImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ImageResponse response});
+  $Res call({ImageResult response});
 
-  $ImageResponseCopyWith<$Res> get response;
+  $ImageResultCopyWith<$Res> get response;
 }
 
 /// @nodoc
@@ -340,14 +340,14 @@ class __$$GetImplCopyWithImpl<$Res>
       null == response
           ? _value.response
           : response // ignore: cast_nullable_to_non_nullable
-              as ImageResponse,
+              as ImageResult,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ImageResponseCopyWith<$Res> get response {
-    return $ImageResponseCopyWith<$Res>(_value.response, (value) {
+  $ImageResultCopyWith<$Res> get response {
+    return $ImageResultCopyWith<$Res>(_value.response, (value) {
       return _then(_value.copyWith(response: value));
     });
   }
@@ -359,7 +359,7 @@ class _$GetImpl implements _Get {
   const _$GetImpl(this.response);
 
   @override
-  final ImageResponse response;
+  final ImageResult response;
 
   @override
   String toString() {
@@ -389,7 +389,7 @@ class _$GetImpl implements _Get {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ImageResponse response) get,
+    required TResult Function(ImageResult response) get,
     required TResult Function() error,
   }) {
     return get(response);
@@ -400,7 +400,7 @@ class _$GetImpl implements _Get {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ImageResponse response)? get,
+    TResult? Function(ImageResult response)? get,
     TResult? Function()? error,
   }) {
     return get?.call(response);
@@ -411,7 +411,7 @@ class _$GetImpl implements _Get {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ImageResponse response)? get,
+    TResult Function(ImageResult response)? get,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -460,9 +460,9 @@ class _$GetImpl implements _Get {
 }
 
 abstract class _Get implements ImageGetAllState {
-  const factory _Get(final ImageResponse response) = _$GetImpl;
+  const factory _Get(final ImageResult response) = _$GetImpl;
 
-  ImageResponse get response;
+  ImageResult get response;
   @JsonKey(ignore: true)
   _$$GetImplCopyWith<_$GetImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -508,7 +508,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ImageResponse response) get,
+    required TResult Function(ImageResult response) get,
     required TResult Function() error,
   }) {
     return error();
@@ -519,7 +519,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ImageResponse response)? get,
+    TResult? Function(ImageResult response)? get,
     TResult? Function()? error,
   }) {
     return error?.call();
@@ -530,7 +530,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ImageResponse response)? get,
+    TResult Function(ImageResult response)? get,
     TResult Function()? error,
     required TResult orElse(),
   }) {

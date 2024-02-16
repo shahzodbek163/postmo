@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'image_response.dart';
+part of 'image_result.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ImageResponseImpl _$$ImageResponseImplFromJson(Map<String, dynamic> json) =>
-    _$ImageResponseImpl(
+_$ImageResultImpl _$$ImageResultImplFromJson(Map<String, dynamic> json) =>
+    _$ImageResultImpl(
       data: (json['data'] as List<dynamic>)
           .map((e) => ImageDatum.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$$ImageResponseImplToJson(_$ImageResponseImpl instance) =>
+Map<String, dynamic> _$$ImageResultImplToJson(_$ImageResultImpl instance) =>
     <String, dynamic>{
       'data': instance.data,
     };
@@ -24,7 +24,9 @@ _$ImageDatumImpl _$$ImageDatumImplFromJson(Map<String, dynamic> json) =>
       title: json['title'] as String,
       image: json['image'] as String,
       desc: json['desc'] as String,
-      user: User.fromJson(json['user'] as Map<String, dynamic>),
+      user: json['user'] == null
+          ? null
+          : User.fromJson(json['user'] as Map<String, dynamic>),
       createdAt: DateTime.parse(json['createdAt'] as String),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
       v: json['__v'] as int,

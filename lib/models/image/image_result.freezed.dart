@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'image_response.dart';
+part of 'image_result.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,34 +14,34 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-ImageResponse _$ImageResponseFromJson(Map<String, dynamic> json) {
-  return _ImageResponse.fromJson(json);
+ImageResult _$ImageResultFromJson(Map<String, dynamic> json) {
+  return _ImageResult.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ImageResponse {
+mixin _$ImageResult {
   @JsonKey(name: "data")
   List<ImageDatum> get data => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ImageResponseCopyWith<ImageResponse> get copyWith =>
+  $ImageResultCopyWith<ImageResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ImageResponseCopyWith<$Res> {
-  factory $ImageResponseCopyWith(
-          ImageResponse value, $Res Function(ImageResponse) then) =
-      _$ImageResponseCopyWithImpl<$Res, ImageResponse>;
+abstract class $ImageResultCopyWith<$Res> {
+  factory $ImageResultCopyWith(
+          ImageResult value, $Res Function(ImageResult) then) =
+      _$ImageResultCopyWithImpl<$Res, ImageResult>;
   @useResult
   $Res call({@JsonKey(name: "data") List<ImageDatum> data});
 }
 
 /// @nodoc
-class _$ImageResponseCopyWithImpl<$Res, $Val extends ImageResponse>
-    implements $ImageResponseCopyWith<$Res> {
-  _$ImageResponseCopyWithImpl(this._value, this._then);
+class _$ImageResultCopyWithImpl<$Res, $Val extends ImageResult>
+    implements $ImageResultCopyWith<$Res> {
+  _$ImageResultCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -63,22 +63,22 @@ class _$ImageResponseCopyWithImpl<$Res, $Val extends ImageResponse>
 }
 
 /// @nodoc
-abstract class _$$ImageResponseImplCopyWith<$Res>
-    implements $ImageResponseCopyWith<$Res> {
-  factory _$$ImageResponseImplCopyWith(
-          _$ImageResponseImpl value, $Res Function(_$ImageResponseImpl) then) =
-      __$$ImageResponseImplCopyWithImpl<$Res>;
+abstract class _$$ImageResultImplCopyWith<$Res>
+    implements $ImageResultCopyWith<$Res> {
+  factory _$$ImageResultImplCopyWith(
+          _$ImageResultImpl value, $Res Function(_$ImageResultImpl) then) =
+      __$$ImageResultImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@JsonKey(name: "data") List<ImageDatum> data});
 }
 
 /// @nodoc
-class __$$ImageResponseImplCopyWithImpl<$Res>
-    extends _$ImageResponseCopyWithImpl<$Res, _$ImageResponseImpl>
-    implements _$$ImageResponseImplCopyWith<$Res> {
-  __$$ImageResponseImplCopyWithImpl(
-      _$ImageResponseImpl _value, $Res Function(_$ImageResponseImpl) _then)
+class __$$ImageResultImplCopyWithImpl<$Res>
+    extends _$ImageResultCopyWithImpl<$Res, _$ImageResultImpl>
+    implements _$$ImageResultImplCopyWith<$Res> {
+  __$$ImageResultImplCopyWithImpl(
+      _$ImageResultImpl _value, $Res Function(_$ImageResultImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -86,7 +86,7 @@ class __$$ImageResponseImplCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$ImageResponseImpl(
+    return _then(_$ImageResultImpl(
       data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -97,13 +97,13 @@ class __$$ImageResponseImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ImageResponseImpl implements _ImageResponse {
-  const _$ImageResponseImpl(
+class _$ImageResultImpl implements _ImageResult {
+  const _$ImageResultImpl(
       {@JsonKey(name: "data") required final List<ImageDatum> data})
       : _data = data;
 
-  factory _$ImageResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ImageResponseImplFromJson(json);
+  factory _$ImageResultImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ImageResultImplFromJson(json);
 
   final List<ImageDatum> _data;
   @override
@@ -116,14 +116,14 @@ class _$ImageResponseImpl implements _ImageResponse {
 
   @override
   String toString() {
-    return 'ImageResponse(data: $data)';
+    return 'ImageResult(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ImageResponseImpl &&
+            other is _$ImageResultImpl &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
@@ -135,31 +135,31 @@ class _$ImageResponseImpl implements _ImageResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ImageResponseImplCopyWith<_$ImageResponseImpl> get copyWith =>
-      __$$ImageResponseImplCopyWithImpl<_$ImageResponseImpl>(this, _$identity);
+  _$$ImageResultImplCopyWith<_$ImageResultImpl> get copyWith =>
+      __$$ImageResultImplCopyWithImpl<_$ImageResultImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ImageResponseImplToJson(
+    return _$$ImageResultImplToJson(
       this,
     );
   }
 }
 
-abstract class _ImageResponse implements ImageResponse {
-  const factory _ImageResponse(
+abstract class _ImageResult implements ImageResult {
+  const factory _ImageResult(
           {@JsonKey(name: "data") required final List<ImageDatum> data}) =
-      _$ImageResponseImpl;
+      _$ImageResultImpl;
 
-  factory _ImageResponse.fromJson(Map<String, dynamic> json) =
-      _$ImageResponseImpl.fromJson;
+  factory _ImageResult.fromJson(Map<String, dynamic> json) =
+      _$ImageResultImpl.fromJson;
 
   @override
   @JsonKey(name: "data")
   List<ImageDatum> get data;
   @override
   @JsonKey(ignore: true)
-  _$$ImageResponseImplCopyWith<_$ImageResponseImpl> get copyWith =>
+  _$$ImageResultImplCopyWith<_$ImageResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -178,7 +178,7 @@ mixin _$ImageDatum {
   @JsonKey(name: "desc")
   String get desc => throw _privateConstructorUsedError;
   @JsonKey(name: "user")
-  User get user => throw _privateConstructorUsedError;
+  User? get user => throw _privateConstructorUsedError;
   @JsonKey(name: "createdAt")
   DateTime get createdAt => throw _privateConstructorUsedError;
   @JsonKey(name: "updatedAt")
@@ -203,12 +203,12 @@ abstract class $ImageDatumCopyWith<$Res> {
       @JsonKey(name: "title") String title,
       @JsonKey(name: "image") String image,
       @JsonKey(name: "desc") String desc,
-      @JsonKey(name: "user") User user,
+      @JsonKey(name: "user") User? user,
       @JsonKey(name: "createdAt") DateTime createdAt,
       @JsonKey(name: "updatedAt") DateTime updatedAt,
       @JsonKey(name: "__v") int v});
 
-  $UserCopyWith<$Res> get user;
+  $UserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -228,7 +228,7 @@ class _$ImageDatumCopyWithImpl<$Res, $Val extends ImageDatum>
     Object? title = null,
     Object? image = null,
     Object? desc = null,
-    Object? user = null,
+    Object? user = freezed,
     Object? createdAt = null,
     Object? updatedAt = null,
     Object? v = null,
@@ -250,10 +250,10 @@ class _$ImageDatumCopyWithImpl<$Res, $Val extends ImageDatum>
           ? _value.desc
           : desc // ignore: cast_nullable_to_non_nullable
               as String,
-      user: null == user
+      user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as User?,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -271,8 +271,12 @@ class _$ImageDatumCopyWithImpl<$Res, $Val extends ImageDatum>
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
+  $UserCopyWith<$Res>? get user {
+    if (_value.user == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.user!, (value) {
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
@@ -291,13 +295,13 @@ abstract class _$$ImageDatumImplCopyWith<$Res>
       @JsonKey(name: "title") String title,
       @JsonKey(name: "image") String image,
       @JsonKey(name: "desc") String desc,
-      @JsonKey(name: "user") User user,
+      @JsonKey(name: "user") User? user,
       @JsonKey(name: "createdAt") DateTime createdAt,
       @JsonKey(name: "updatedAt") DateTime updatedAt,
       @JsonKey(name: "__v") int v});
 
   @override
-  $UserCopyWith<$Res> get user;
+  $UserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -315,7 +319,7 @@ class __$$ImageDatumImplCopyWithImpl<$Res>
     Object? title = null,
     Object? image = null,
     Object? desc = null,
-    Object? user = null,
+    Object? user = freezed,
     Object? createdAt = null,
     Object? updatedAt = null,
     Object? v = null,
@@ -337,10 +341,10 @@ class __$$ImageDatumImplCopyWithImpl<$Res>
           ? _value.desc
           : desc // ignore: cast_nullable_to_non_nullable
               as String,
-      user: null == user
+      user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as User?,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -387,7 +391,7 @@ class _$ImageDatumImpl implements _ImageDatum {
   final String desc;
   @override
   @JsonKey(name: "user")
-  final User user;
+  final User? user;
   @override
   @JsonKey(name: "createdAt")
   final DateTime createdAt;
@@ -445,7 +449,7 @@ abstract class _ImageDatum implements ImageDatum {
       @JsonKey(name: "title") required final String title,
       @JsonKey(name: "image") required final String image,
       @JsonKey(name: "desc") required final String desc,
-      @JsonKey(name: "user") required final User user,
+      @JsonKey(name: "user") required final User? user,
       @JsonKey(name: "createdAt") required final DateTime createdAt,
       @JsonKey(name: "updatedAt") required final DateTime updatedAt,
       @JsonKey(name: "__v") required final int v}) = _$ImageDatumImpl;
@@ -467,7 +471,7 @@ abstract class _ImageDatum implements ImageDatum {
   String get desc;
   @override
   @JsonKey(name: "user")
-  User get user;
+  User? get user;
   @override
   @JsonKey(name: "createdAt")
   DateTime get createdAt;

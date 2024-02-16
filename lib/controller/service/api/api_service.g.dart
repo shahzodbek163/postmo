@@ -13,7 +13,7 @@ class _ApiService implements ApiService {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'https://7365-37-110-214-174.ngrok-free.app/api';
+    baseUrl ??= 'https://8dc7-95-214-210-136.ngrok-free.app/api';
   }
 
   final Dio _dio;
@@ -75,13 +75,13 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<ImageResponse> getAllImage() async {
+  Future<ImageResult> getAllImage() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<ImageResponse>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<ImageResult>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -97,7 +97,7 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = ImageResponse.fromJson(_result.data!);
+    final value = ImageResult.fromJson(_result.data!);
     return value;
   }
 
