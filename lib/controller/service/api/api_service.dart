@@ -5,6 +5,7 @@ import 'package:postmo/model/auth/login/response/login_response.dart';
 import 'package:postmo/model/auth/register/request/register_request.dart';
 import 'package:postmo/model/auth/register/response/register_response.dart';
 import 'package:postmo/models/image/image_result.dart';
+import 'package:postmo/models/user/user_result.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'api_service.g.dart';
@@ -19,4 +20,6 @@ abstract class ApiService {
   Future<RegisterResponse> register(@Body() RegisterRequest registerRequest);
   @GET("/post/image/get/all")
   Future<ImageResult> getAllImage();
+  @GET("/user/get/")
+  Future<UserResult> getUserInfo();
 }

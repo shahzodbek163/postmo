@@ -13,7 +13,7 @@ class _ApiService implements ApiService {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'https://8dc7-95-214-210-136.ngrok-free.app/api';
+    baseUrl ??= 'http://192.168.205.14:9090/api';
   }
 
   final Dio _dio;
@@ -79,7 +79,7 @@ class _ApiService implements ApiService {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<ImageResult>(Options(
       method: 'GET',
@@ -98,6 +98,33 @@ class _ApiService implements ApiService {
               baseUrl,
             ))));
     final value = ImageResult.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<UserResult> getUserInfo() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<UserResult>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/user/get/',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = UserResult.fromJson(_result.data!);
     return value;
   }
 

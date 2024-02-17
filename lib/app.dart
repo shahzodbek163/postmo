@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:postmo/controller/bloc/image/image_get_all_cubit.dart';
+import 'package:postmo/controller/bloc/user/user_get_info_cubit.dart';
 import 'package:postmo/controller/service/navigation/go_router.dart';
 import 'package:provider/provider.dart';
 
@@ -20,6 +21,7 @@ class _MyAppState extends State<MyApp> {
     return MultiProvider(
       providers: [
         BlocProvider(create: (context) => ImageGetAllCubit()..getAllImage()),
+        BlocProvider(create: (context) => UserGetInfoCubit()..getUserInfo()),
       ],
       child: ScreenUtilInit(
         minTextAdapt: true,

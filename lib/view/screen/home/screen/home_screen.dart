@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:postmo/controller/bloc/image/image_get_all_cubit.dart';
+import 'package:postmo/controller/bloc/user/user_get_info_cubit.dart';
 import 'package:postmo/view/screen/home/widget/image_card.dart';
 import 'package:postmo/view/value/app_fonts.dart';
 
@@ -28,28 +29,36 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             const SizedBox(height: 60),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                children: [
-                  Container(
-                    width: 40,
-                    height: 40,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage("assets/images/camera.jpg"),
-                      ),
+            BlocBuilder<UserGetInfoCubit, UserGetInfoState>(
+              builder: (context, state) {
+                return state.maybeWhen(
+                  orElse: () => const SizedBox(),
+                  loading: () => const CircularProgressIndicator(),
+                  get: (result) => Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 40,
+                          height: 40,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/camera.jpg"),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        Text(
+                          result.name,
+                          style: AppFonts.h2Semibold18,
+                        ),
+                      ],
                     ),
                   ),
-                  const SizedBox(width: 10),
-                  Text(
-                    "MOdevco",
-                    style: AppFonts.h2Semibold18,
-                  ),
-                ],
-              ),
+                );
+              },
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
