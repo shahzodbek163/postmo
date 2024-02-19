@@ -13,7 +13,7 @@ import 'package:postmo/view/test_screen.dart';
 class AppGoRouter {
   final router = GoRouter(
     navigatorKey: NavigationService.navigatorKey,
-    initialLocation: LoginScreen.routeName,
+    initialLocation: MainScreen.routeName,
     routes: [
       GoRoute(
         path: TestScreen.routeName,
@@ -54,7 +54,7 @@ class AppGoRouter {
         path: MainScreen.routeName,
         pageBuilder: (context, state) => fadeTransition(
           state,
-          MainScreen(),
+          const MainScreen(),
         ),
       ),
       GoRoute(

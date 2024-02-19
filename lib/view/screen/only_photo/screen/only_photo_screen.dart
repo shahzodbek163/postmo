@@ -25,22 +25,6 @@ class OnlyPhotoScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            InkWell(
-              onTap: () {
-                print("salom");
-              },
-              child: Container(
-                height: 44.h,
-                width: 44.w,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: AppColor.back,
-                ),
-                child: const Icon(
-                  Icons.arrow_back_ios_outlined,
-                ),
-              ),
-            ),
             const Gap(3),
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -59,7 +43,7 @@ class OnlyPhotoScreen extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 4,
                 crossAxisSpacing: 4,
-                itemCount: 10,
+                itemCount: 15,
                 itemBuilder: (context, index) => Stack(
                   children: [
                     Container(
